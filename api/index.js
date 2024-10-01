@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 // Подключение к MongoDB
 mongoose
-  .connect(process.env.VITE_DATABASE_URL)
+  .connect(process.env.DATABASE_URL)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
 
@@ -117,7 +117,9 @@ app.delete('/clients/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+module.exports = app;
